@@ -9,6 +9,8 @@ import UIKit
 
 class ParametersViewController: UIViewController {
     
+    var simulationViewModel: SimulationViewModel?
+    
     @IBOutlet var groupSizeTF: UITextField!
     @IBOutlet var infectionFactorTF: UITextField!
     @IBOutlet var updateTimerTF: UITextField!
@@ -18,10 +20,13 @@ class ParametersViewController: UIViewController {
     }
     
     @IBAction func startSimButtonPressed(_ sender: UIButton) {
-        guard let groupSize = Int(groupSizeTF.text ?? ""),
-              let infectionFactor = Int(infectionFactorTF.text ?? ""),
-              let updateTimer = TimeInterval(updateTimerTF.text ?? "") else {
-            showAlert(title: "Invalid Output", message: "Please ented valid parameters")
+        guard let groupSizeText = groupSizeTF.text, !groupSizeText.isEmpty,
+              let groupSize = Int(groupSizeText),
+              let infectionFactorText = infectionFactorTF.text, !infectionFactorText.isEmpty,
+              let infectionFactor = Int(infectionFactorText),
+              let updateTimerText = updateTimerTF.text, !updateTimerText.isEmpty,
+              let updateTimer = TimeInterval(updateTimerText) else {
+            showAlert(title: "Invalid Output", message: "Please enter valid parameters")
             return
         }
         
@@ -33,12 +38,13 @@ class ParametersViewController: UIViewController {
         
         performSegue(withIdentifier: "showSimulation", sender: simulationViewModel)
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSimulation",
            let destinationVC = segue.destination as? SimulationViewController,
-           let viewModel = sender as? SimulationViewModel {
-            destinationVC.simulationViewModel = viewModel
+           let senderVC = sender as? ParametersViewController {
+            destinationVC.simulationViewModel = senderVC.simulationViewModel
         }
     }
     

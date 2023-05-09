@@ -13,10 +13,12 @@ class SimulationViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pinchGestureRecognizer: UIPinchGestureRecognizer!
     
-    var simulationViewModel: SimulationViewModel!
+    var simulationViewModel: SimulationViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("SimulationViewController viewDidLoad called")
+        print("simulationViewModel: \(simulationViewModel)")
         collectionView.dataSource = self
         collectionView.delegate = self
         scrollView.delegate = self
@@ -44,7 +46,7 @@ class SimulationViewController: UIViewController {
 
 extension SimulationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return simulationViewModel.gridSize
+        return simulationViewModel.groupSize
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

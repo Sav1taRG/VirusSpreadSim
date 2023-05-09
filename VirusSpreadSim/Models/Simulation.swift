@@ -33,12 +33,16 @@ class Simulation {
         let numberOfRows = gridSize
         let numberOfColumns = gridSize
         
+        print("gridSize: \(gridSize)")
+        print("numberOfRows: \(numberOfRows), numberOfColumns: \(numberOfColumns)")
+        
         for row in 0..<numberOfRows {
             for column in 0..<numberOfColumns {
                 let person = Person(row: row, column: column)
                 self.people.append(person)
             }
         }
+        print("Total people count: \(people.count)")
     }
     
     func start() {
@@ -93,7 +97,7 @@ class Simulation {
         return neighbors
     }
     
-    private func findPerson(atRow row: Int, atColumn column: Int) -> Person? {
+    internal func findPerson(atRow row: Int, atColumn column: Int) -> Person? {
         return people.first { $0.row == row && $0.column == column }
     }
     

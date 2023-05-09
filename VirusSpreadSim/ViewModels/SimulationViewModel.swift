@@ -40,10 +40,21 @@ class SimulationViewModel {
         simulation.infectPerson(at: index)
     }
     
-    func personViewModel(at index: Int) -> PersonViewModel {
-        let person = simulation.people[index]
+    func personViewModel(atRow row: Int, atColumn column: Int) -> PersonViewModel {
+        let person = simulation.people.first { $0.row == row && $0.column == column }!
         return PersonViewModel(person: person)
     }
+    
+    func personViewModel(at index: Int) -> PersonViewModel {
+        let row = index / gridSize
+        let column = index % gridSize
+        if let person = simulation.findPerson(atRow: row, atColumn: column) {
+            return PersonViewModel(person: person)
+        } else {
+            fatalError("Could not find person at row \(row) and column \(column)")
+        }
+    }
+
     
     func healthyCount() -> Int {
         return simulation.people.filter { $0.state == .healthy }.count
