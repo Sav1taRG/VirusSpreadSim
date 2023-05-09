@@ -16,18 +16,22 @@ class SimulationViewController: UIViewController {
     var simulationViewModel: SimulationViewModel?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print("SimulationViewController viewDidLoad called")
-        print("simulationViewModel: \(simulationViewModel)")
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        scrollView.delegate = self
-        collectionView.register(UINib(nibName: "PersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PersonCell")
-        simulationViewModel.onUpdate = { [weak self] in
-            self?.collectionView.reloadData()
+            super.viewDidLoad()
+            guard let viewModel = simulationViewModel else {
+                print("simulationViewModel is nil")
+                return
+            }
+            print("SimulationViewController viewDidLoad called")
+            print("simulationViewModel: \(viewModel)")
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            scrollView.delegate = self
+            collectionView.register(UINib(nibName: "PersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PersonCell")
+            viewModel.onUpdate = { [weak self] in
+                self?.collectionView.reloadData()
+            }
+            viewModel.startSimulation()
         }
-        simulationViewModel.startSimulation()
-    }
     
     @IBAction func pinchGestureHandler(_ sender: UIPinchGestureRecognizer) {
         if sender.state == .began || sender.state == .changed {
