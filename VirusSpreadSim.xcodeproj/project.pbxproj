@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		30320D8F2A0A694700B659C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320D8E2A0A694700B659C6 /* AppDelegate.swift */; };
 		30320D912A0A694700B659C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320D902A0A694700B659C6 /* SceneDelegate.swift */; };
-		30320D932A0A694700B659C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320D922A0A694700B659C6 /* ViewController.swift */; };
 		30320D962A0A694700B659C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30320D942A0A694700B659C6 /* Main.storyboard */; };
 		30320D982A0A694900B659C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30320D972A0A694900B659C6 /* Assets.xcassets */; };
 		30320D9B2A0A694900B659C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30320D992A0A694900B659C6 /* LaunchScreen.storyboard */; };
+		30320DA32A0A6A8800B659C6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DA22A0A6A8800B659C6 /* Person.swift */; };
+		30320DA52A0A6B7B00B659C6 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DA42A0A6B7B00B659C6 /* Simulation.swift */; };
+		30320DA82A0A6D3800B659C6 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DA72A0A6D3800B659C6 /* PersonViewModel.swift */; };
+		30320DAB2A0A74B300B659C6 /* SimulationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DAA2A0A74B300B659C6 /* SimulationViewModel.swift */; };
+		30320DAE2A0A74EF00B659C6 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DAD2A0A74EF00B659C6 /* PersonView.swift */; };
+		30320DB02A0A758400B659C6 /* ParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DAF2A0A758400B659C6 /* ParametersViewController.swift */; };
+		30320DB22A0A75FE00B659C6 /* SimulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DB12A0A75FE00B659C6 /* SimulationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30320D8B2A0A694700B659C6 /* VirusSpreadSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirusSpreadSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30320D8E2A0A694700B659C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30320D902A0A694700B659C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		30320D922A0A694700B659C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		30320D952A0A694700B659C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30320D972A0A694900B659C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30320D9A2A0A694900B659C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30320D9C2A0A694900B659C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30320DA22A0A6A8800B659C6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		30320DA42A0A6B7B00B659C6 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
+		30320DA72A0A6D3800B659C6 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		30320DAA2A0A74B300B659C6 /* SimulationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationViewModel.swift; sourceTree = "<group>"; };
+		30320DAD2A0A74EF00B659C6 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		30320DAF2A0A758400B659C6 /* ParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersViewController.swift; sourceTree = "<group>"; };
+		30320DB12A0A75FE00B659C6 /* SimulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +70,51 @@
 			children = (
 				30320D8E2A0A694700B659C6 /* AppDelegate.swift */,
 				30320D902A0A694700B659C6 /* SceneDelegate.swift */,
-				30320D922A0A694700B659C6 /* ViewController.swift */,
 				30320D942A0A694700B659C6 /* Main.storyboard */,
+				30320DB32A0A764400B659C6 /* ViewControllers */,
+				30320DA92A0A748E00B659C6 /* ViewModels */,
+				30320DA62A0A6BFD00B659C6 /* Models */,
 				30320D972A0A694900B659C6 /* Assets.xcassets */,
 				30320D992A0A694900B659C6 /* LaunchScreen.storyboard */,
 				30320D9C2A0A694900B659C6 /* Info.plist */,
 			);
 			path = VirusSpreadSim;
+			sourceTree = "<group>";
+		};
+		30320DA62A0A6BFD00B659C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30320DA22A0A6A8800B659C6 /* Person.swift */,
+				30320DA42A0A6B7B00B659C6 /* Simulation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30320DA92A0A748E00B659C6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				30320DA72A0A6D3800B659C6 /* PersonViewModel.swift */,
+				30320DAA2A0A74B300B659C6 /* SimulationViewModel.swift */,
+				30320DAC2A0A74D800B659C6 /* Views */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		30320DAC2A0A74D800B659C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30320DAD2A0A74EF00B659C6 /* PersonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30320DB32A0A764400B659C6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				30320DAF2A0A758400B659C6 /* ParametersViewController.swift */,
+				30320DB12A0A75FE00B659C6 /* SimulationViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30320D932A0A694700B659C6 /* ViewController.swift in Sources */,
+				30320DB22A0A75FE00B659C6 /* SimulationViewController.swift in Sources */,
 				30320D8F2A0A694700B659C6 /* AppDelegate.swift in Sources */,
+				30320DAB2A0A74B300B659C6 /* SimulationViewModel.swift in Sources */,
+				30320DA82A0A6D3800B659C6 /* PersonViewModel.swift in Sources */,
+				30320DA52A0A6B7B00B659C6 /* Simulation.swift in Sources */,
+				30320DB02A0A758400B659C6 /* ParametersViewController.swift in Sources */,
+				30320DA32A0A6A8800B659C6 /* Person.swift in Sources */,
 				30320D912A0A694700B659C6 /* SceneDelegate.swift in Sources */,
+				30320DAE2A0A74EF00B659C6 /* PersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +349,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +358,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = RG.VirusSpreadSim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +380,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +389,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = RG.VirusSpreadSim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
