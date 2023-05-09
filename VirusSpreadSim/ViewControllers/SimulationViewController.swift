@@ -22,7 +22,6 @@ class SimulationViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         scrollView.delegate = self
-        collectionView.register(UINib(nibName: "PersonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PersonCell")
         simulationViewModel.onUpdate = { [weak self] in
             self?.collectionView.reloadData()
         }
