@@ -9,7 +9,7 @@ import Foundation
 
 class SimulationViewModel {
     
-    private var simulation: Simulation
+    private let simulation: Simulation
     
     var groupSize: Int {
         return simulation.groupSize
@@ -19,8 +19,11 @@ class SimulationViewModel {
         return simulation.gridSize
     }
     
+    var onUpdate: (() -> Void)?
+    
     init(groupSize: Int, infectionFactor: Int, updateTimer: TimeInterval) {
         self.simulation = Simulation(groupSize: groupSize, infectionFactor: infectionFactor, updateTimer: updateTimer)
+        self.simulation.delegate = self
     }
     
     func startSimulation() {
@@ -55,6 +58,6 @@ class SimulationViewModel {
 // MARK: - SimulationDelegate
 extension SimulationViewModel: SimulationDelegate {
     func simulationDidUpdate() {
-        // Notify the view to update the UI
+        onUpdate?()
     }
 }

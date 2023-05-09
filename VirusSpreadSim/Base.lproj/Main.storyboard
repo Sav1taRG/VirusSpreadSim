@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,7 +74,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Start Simulation"/>
                                 <connections>
                                     <action selector="startSimButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9cN-h3-VwC"/>
-                                    <segue destination="JR1-oS-cyj" kind="presentation" modalPresentationStyle="fullScreen" id="Kgs-AC-DYq"/>
+                                    <segue destination="JR1-oS-cyj" kind="presentation" identifier="showSimulation" modalPresentationStyle="fullScreen" id="Kgs-AC-DYq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,11 +105,69 @@
                     <view key="view" contentMode="scaleToFill" id="35C-sD-1vs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEN-EU-IuT">
+                                <rect key="frame" x="40" y="53" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v3z-OM-pxh">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <gestureRecognizers/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TiB-Pb-Ktf">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PersonCell" id="Nzn-He-fUK" customClass="PersonCollectionViewCell" customModule="VirusSpreadSim" customModuleProvider="target">
+                                                <rect key="frame" x="56" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ovf-Pk-uc8" customClass="PersonView" customModule="VirusSpreadSim" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outlet property="personView" destination="ovf-Pk-uc8" id="gYl-h0-Vas"/>
+                                                    <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="UqT-Fh-g17"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="LhZ-ci-xRt"/>
+                                            <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="fwH-4Z-mTO"/>
+                                            <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="0cX-XT-mus"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="YaQ-4B-jLm"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ez6-gk-BoV"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="UcP-fa-fDA"/>
+                                    <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="yL7-3i-4k9"/>
+                                    <outletCollection property="gestureRecognizers" destination="Xxf-Rt-XZz" appends="YES" id="a23-E2-4H7"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dMW-zI-gHF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="v3z-OM-pxh" id="i6K-22-s6q"/>
+                        <outlet property="pinchGestureRecognizer" destination="Xxf-Rt-XZz" id="3eP-Ua-CO0"/>
+                        <outlet property="scrollView" destination="kEN-EU-IuT" id="Snf-hV-aCm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfY-pJ-b07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="Xxf-Rt-XZz">
+                    <connections>
+                        <action selector="pinchGestureHandler:" destination="JR1-oS-cyj" id="6Cy-Br-Lgz"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="216" y="11"/>
         </scene>

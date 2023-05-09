@@ -16,9 +16,10 @@
 		30320DA52A0A6B7B00B659C6 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DA42A0A6B7B00B659C6 /* Simulation.swift */; };
 		30320DA82A0A6D3800B659C6 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DA72A0A6D3800B659C6 /* PersonViewModel.swift */; };
 		30320DAB2A0A74B300B659C6 /* SimulationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DAA2A0A74B300B659C6 /* SimulationViewModel.swift */; };
-		30320DAE2A0A74EF00B659C6 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DAD2A0A74EF00B659C6 /* PersonView.swift */; };
 		30320DB02A0A758400B659C6 /* ParametersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DAF2A0A758400B659C6 /* ParametersViewController.swift */; };
 		30320DB22A0A75FE00B659C6 /* SimulationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30320DB12A0A75FE00B659C6 /* SimulationViewController.swift */; };
+		30A26B712A0A883D0068CC4D /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A26B702A0A883D0068CC4D /* PersonCollectionViewCell.swift */; };
+		30A26B732A0A9D730068CC4D /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A26B722A0A9D730068CC4D /* PersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +34,10 @@
 		30320DA42A0A6B7B00B659C6 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		30320DA72A0A6D3800B659C6 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		30320DAA2A0A74B300B659C6 /* SimulationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationViewModel.swift; sourceTree = "<group>"; };
-		30320DAD2A0A74EF00B659C6 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		30320DAF2A0A758400B659C6 /* ParametersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersViewController.swift; sourceTree = "<group>"; };
 		30320DB12A0A75FE00B659C6 /* SimulationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationViewController.swift; sourceTree = "<group>"; };
+		30A26B702A0A883D0068CC4D /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		30A26B722A0A9D730068CC4D /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				30320D8E2A0A694700B659C6 /* AppDelegate.swift */,
 				30320D902A0A694700B659C6 /* SceneDelegate.swift */,
 				30320D942A0A694700B659C6 /* Main.storyboard */,
+				30320DAC2A0A74D800B659C6 /* Views */,
 				30320DB32A0A764400B659C6 /* ViewControllers */,
 				30320DA92A0A748E00B659C6 /* ViewModels */,
 				30320DA62A0A6BFD00B659C6 /* Models */,
@@ -95,7 +98,6 @@
 			children = (
 				30320DA72A0A6D3800B659C6 /* PersonViewModel.swift */,
 				30320DAA2A0A74B300B659C6 /* SimulationViewModel.swift */,
-				30320DAC2A0A74D800B659C6 /* Views */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,7 +105,8 @@
 		30320DAC2A0A74D800B659C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				30320DAD2A0A74EF00B659C6 /* PersonView.swift */,
+				30A26B702A0A883D0068CC4D /* PersonCollectionViewCell.swift */,
+				30A26B722A0A9D730068CC4D /* PersonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,11 +195,12 @@
 				30320D8F2A0A694700B659C6 /* AppDelegate.swift in Sources */,
 				30320DAB2A0A74B300B659C6 /* SimulationViewModel.swift in Sources */,
 				30320DA82A0A6D3800B659C6 /* PersonViewModel.swift in Sources */,
+				30A26B712A0A883D0068CC4D /* PersonCollectionViewCell.swift in Sources */,
+				30A26B732A0A9D730068CC4D /* PersonView.swift in Sources */,
 				30320DA52A0A6B7B00B659C6 /* Simulation.swift in Sources */,
 				30320DB02A0A758400B659C6 /* ParametersViewController.swift in Sources */,
 				30320DA32A0A6A8800B659C6 /* Person.swift in Sources */,
 				30320D912A0A694700B659C6 /* SceneDelegate.swift in Sources */,
-				30320DAE2A0A74EF00B659C6 /* PersonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 import UIKit
 
 class ParametersViewController: UIViewController {
+    
     @IBOutlet var groupSizeTF: UITextField!
     @IBOutlet var infectionFactorTF: UITextField!
     @IBOutlet var updateTimerTF: UITextField!
@@ -29,6 +30,16 @@ class ParametersViewController: UIViewController {
             infectionFactor: infectionFactor,
             updateTimer: updateTimer
         )
+        
+        performSegue(withIdentifier: "showSimulation", sender: simulationViewModel)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSimulation",
+           let destinationVC = segue.destination as? SimulationViewController,
+           let viewModel = sender as? SimulationViewModel {
+            destinationVC.simulationViewModel = viewModel
+        }
     }
     
     private func showAlert(title: String, message: String) {
@@ -37,5 +48,5 @@ class ParametersViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         present(alertController, animated: true)
     }
-    
 }
+
