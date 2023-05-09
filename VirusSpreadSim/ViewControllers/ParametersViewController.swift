@@ -42,11 +42,21 @@ class ParametersViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSimulation",
-           let destinationVC = segue.destination as? SimulationViewController,
-           let senderVC = sender as? ParametersViewController {
-            destinationVC.simulationViewModel = senderVC.simulationViewModel
+           let destinationVC = segue.destination as? SimulationViewController {
+            if let viewModel = sender as? SimulationViewModel {
+                destinationVC.simulationViewModel = viewModel
+            } else {
+                // set simulationViewModel to a default value if sender is nil
+                let defaultViewModel = SimulationViewModel(
+                    groupSize: 25,
+                    infectionFactor: 3,
+                    updateTimer: 1.0
+                )
+                destinationVC.simulationViewModel = defaultViewModel
+            }
         }
     }
+
     
     private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
